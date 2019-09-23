@@ -1,3 +1,4 @@
+from math import *
 # CPE 202 Lab 0
 
 # represents a location using name, latitude and longitude
@@ -7,7 +8,7 @@ class Location:
         self.lat = lat      # latitude in degrees (-90 to 90)
         self.lon = lon      # longitude in degrees (-180 to 180)
     def __eq__(self, other):
-        return self.lat == other.lat and self.lon == other.lon
+        return type(other) == Location and isclose(self.lat, other.lat) and isclose(self.lon, other.lon)
     def __repr__(self):
         return self.name
         

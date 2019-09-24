@@ -1,4 +1,4 @@
-aimport unittest
+import unittest
 from lab1 import *
 
  # A few test cases.  Add more!!!
@@ -9,6 +9,21 @@ class TestLab1(unittest.TestCase):
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
+        #Testing for if the list is empty
+        list1 = []
+        self.assertEqual(max_list_iter(list1), None)
+        #Testing for max as the first number
+        list2 = [6, 2, 3, 4]
+        self.assertEqual(max_list_iter(list2), 6)
+        #Testing for max as the last number
+        list3 = [1, 2, 3, 4]
+        self.assertEqual(max_list_iter(list3), 4)
+        #Testing for max as a middle number
+        list4 = [1, 2, 4, 3]
+        self.assertEqual(max_list_iter(list3), 4)
+        #Testing for max when there are multiple maxes
+        list5 = [1, 2, 4, 4]
+        self.assertEqual(max_list_iter(list3), 4)
 
     def test_reverse_rec(self):
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])

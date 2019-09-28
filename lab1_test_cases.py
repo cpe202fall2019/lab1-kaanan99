@@ -20,10 +20,10 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(max_list_iter(list3), 4)
         #Testing for max as a middle number
         list4 = [1, 2, 4, 3]
-        self.assertEqual(max_list_iter(list3), 4)
+        self.assertEqual(max_list_iter(list4), 4)
         #Testing for max when there are multiple maxes
         list5 = [1, 2, 4, 4]
-        self.assertEqual(max_list_iter(list3), 4)
+        self.assertEqual(max_list_iter(list5), 4)
 
     def test_reverse_rec(self):
         #Testing to see if error is raised
@@ -32,6 +32,9 @@ class TestLab1(unittest.TestCase):
             reverse_rec(tlist)
         #Testing to see if it reverses the List
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
+        self.assertEqual(reverse_rec([2, 4, 6, 8, 10, 12, 14]), [14, 12, 10, 8, 6, 4, 2])
+        #Testing to see if it works with an empty list
+        self.assertEqual(reverse_rec([]), None)
 
     def test_bin_search(self):
         #Testing to see if it finds the target on first try

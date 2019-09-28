@@ -18,6 +18,8 @@ def reverse_rec(int_list):   # must use recursion
    if int_list == None:
       raise ValueError
    new = []
+   if len(int_list) == 0:
+      return None
    new.append(int_list[0])
    if len(int_list) == 1:
       return new

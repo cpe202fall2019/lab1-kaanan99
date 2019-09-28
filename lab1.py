@@ -27,16 +27,17 @@ def reverse_rec(int_list):   # must use recursion
 def bin_search(target, low, high, int_list):  # must use recursion
    """searches for target in int_list[low..high] and returns index if found
    If target is not found returns None. If list is None, raises ValueError """
+   if high < low:
+      return None
    if int_list == None:
       raise ValueError
-   high = int_list.index(int_list[high])
    if (high - low) % 2 == 0:
       mid = int(low +((high - low) / 2))
    else:
       mid = int(low + (((high - low) / 2) - .5))
    if target == int_list[mid]:
       return mid
-   if high - low == 0 and high - low != target:
+   elif high - low == 0:
       return None
    elif target > int_list[mid]:
       return bin_search(target, int(mid + 1), high, int_list)

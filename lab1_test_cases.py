@@ -52,6 +52,11 @@ class TestLab1(unittest.TestCase):
         #Testing to see if the error is raised when list is None
         with self.assertRaises(ValueError):
             bin_search(4, low, high, None)
+        #Testing min +1 with a None
+        lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        low = 0
+        high = len(lst)-1
+        self.assertEqual(bin_search(11.5, low, high, lst), None)
         
 
 if __name__ == "__main__":

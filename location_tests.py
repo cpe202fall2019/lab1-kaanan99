@@ -16,6 +16,7 @@ class TestLab1(unittest.TestCase):
         loc3 = loc1
         loc4 = Location("SLO", 35.3, -120.70000001)
         loc5 = Location("SLO", 35.3, -120.7)
+        loc6 = Location("SF", 35.3, -120.7)
         #Testing to see if two different objects are equal
         self.assertFalse(loc1 == loc2)
         #Testing to see if a refrence to the same object is equal
@@ -26,6 +27,8 @@ class TestLab1(unittest.TestCase):
         self.assertFalse(loc1 == "hi")
         #Testing for rounding
         self.assertTrue(loc1 == loc4)
+        #Testing for different name
+        self.assertFalse(loc1 == loc6)
         
         
     def test_init(self):
